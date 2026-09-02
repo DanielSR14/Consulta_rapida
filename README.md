@@ -1,5 +1,8 @@
 # Consulta Rápida
 
+**[⬇ Baixar para Windows](https://github.com/DanielSR14/Consulta_rapida/releases/latest)**
+ · **[Site](https://danielsr14.github.io/Consulta_rapida/)**
+
 App de bandeja para Windows (WPF, .NET 8) para escritórios de contabilidade que
 usam o sistema **Domínio** (Thomson Reuters). Fica em segundo plano e, com um
 atalho global (`Ctrl+Alt+D`, configurável), abre uma janela flutuante estilo
@@ -50,7 +53,7 @@ src/
   ClienteConsulta.App           WPF: janela, bandeja, atalho global, configurações, marca
 installer/                      script de publicação + Inno Setup (.iss)
 tools/                          geração dos assets de marca
-site/                           landing page estática
+docs/                           landing page estática (GitHub Pages)
 ```
 
 Arquitetura em camadas: `App` → `Data.Excel` + `Data.Sqlite` → `Core`. As

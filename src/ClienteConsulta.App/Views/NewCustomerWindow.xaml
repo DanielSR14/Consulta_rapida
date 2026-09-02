@@ -1,0 +1,99 @@
+<Window x:Class="ClienteConsulta.App.Views.NewCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cadastrar nova empresa" SizeToContent="Height" Width="460"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True">
+
+    <Window.Resources>
+        <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource BodyFont}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}"/>
+            <Setter Property="Margin" Value="0,12,0,5"/>
+        </Style>
+    </Window.Resources>
+
+    <Border Margin="20" CornerRadius="14" Background="{StaticResource SurfaceBrush}"
+            BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" Effect="{StaticResource WindowShadow}">
+        <Grid Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Cadastrar nova empresa" FontFamily="{StaticResource DisplayFont}" FontSize="17"
+                       FontWeight="SemiBold" Foreground="{StaticResource TextPrimaryBrush}"/>
+
+            <TextBlock Grid.Row="1" FontFamily="{StaticResource BodyFont}" FontSize="12" TextWrapping="Wrap"
+                       Foreground="{StaticResource TextSecondaryBrush}" Margin="0,6,0,0"
+                       Text="Os campos com * são obrigatórios. Os demais dados (endereço, contato, CNAE...) podem ser completados depois reimportando a planilha atualizada."/>
+
+            <TextBlock Grid.Row="2" Text="Nome / Razão social *" Style="{StaticResource FieldLabelStyle}"/>
+            <TextBox Grid.Row="3" x:Name="RazaoSocialBox" Style="{StaticResource DialogTextBoxStyle}"/>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Empresa (Código) *" Style="{StaticResource FieldLabelStyle}"/>
+                <TextBlock Grid.Column="2" Text="CNPJ/CPF *" Style="{StaticResource FieldLabelStyle}"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" x:Name="CodigoBox" Style="{StaticResource DialogTextBoxStyle}"/>
+                <TextBox Grid.Column="2" x:Name="CnpjCpfBox" Style="{StaticResource DialogTextBoxStyle}"/>
+            </Grid>
+
+            <TextBlock Grid.Row="6" Text="Inscrição Estadual *" Style="{StaticResource FieldLabelStyle}"/>
+            <TextBox Grid.Row="7" x:Name="InscricaoEstadualBox" Style="{StaticResource DialogTextBoxStyle}"/>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Cidade *" Style="{StaticResource FieldLabelStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="UF" Style="{StaticResource FieldLabelStyle}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" x:Name="MunicipioBox" Style="{StaticResource DialogTextBoxStyle}"/>
+                <TextBox Grid.Row="1" Grid.Column="2" x:Name="UFBox" Style="{StaticResource DialogTextBoxStyle}"
+                         MaxLength="2" CharacterCasing="Upper" HorizontalContentAlignment="Center"/>
+            </Grid>
+
+            <TextBlock x:Name="StatusText" Grid.Row="9" FontFamily="{StaticResource BodyFont}" FontSize="12"
+                       Foreground="{DynamicResource PrimaryBrush}" TextWrapping="Wrap" Margin="0,14,0,0"/>
+
+            <StackPanel Grid.Row="10" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,18,0,0">
+                <Button Content="Cancelar" Style="{StaticResource SecondaryButtonStyle}" Click="CancelButton_OnClick" Margin="0,0,10,0"/>
+                <Button x:Name="SaveButton" Content="Cadastrar" Style="{StaticResource PrimaryButtonStyle}" Click="SaveButton_OnClick"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,62 @@
+# ---- Saída de build do .NET ----
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+build/
+bld/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# ---- Publicação / distribuição (vão em GitHub Releases, não no git) ----
+publish/
+dist/
+*.exe
+*.msi
+
+# ---- Artefatos de restore ----
+project.assets.json
+*.nuget.props
+*.nuget.targets
+.packages/
+packages/
+
+# ---- Visual Studio / Rider / VS Code ----
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.DotSettings.user
+
+# ---- Testes / cobertura ----
+[Tt]est[Rr]esult*/
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage*.info
+
+# ---- Diversos ----
+*.log
+*.tmp
+*.bak
+_ReSharper*/
+*.[Cc]ache
+.DS_Store
+Thumbs.db
+
+# ---- Dados locais do app (nunca versionar base de clientes) ----
+*.db
+*.sqlite
+*.sqlite3
+*.xls
+*.xlsx
+settings.json

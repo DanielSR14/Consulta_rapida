@@ -1,0 +1,130 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+        Ícones simples (24x24) usados na tela "+ Informações", montados a partir de formas
+        primitivas (retângulo/elipse/linha/polígono reto) em vez de curvas complexas — mais
+        fácil de acertar sem poder conferir visualmente em várias iterações (ver nota sobre
+        automação de UI não confiável neste ambiente no CLAUDE.md). Cada um é um GeometryGroup
+        (Freezable, seguro para compartilhar entre várias linhas da lista via StaticResource;
+        um UIElement comum não poderia, pois não pode ter dois pais na árvore visual).
+    -->
+
+    <GeometryGroup x:Key="Icon.Document">
+        <RectangleGeometry Rect="4,3,16,18" RadiusX="2" RadiusY="2"/>
+        <LineGeometry StartPoint="7,9" EndPoint="17,9"/>
+        <LineGeometry StartPoint="7,13" EndPoint="17,13"/>
+        <LineGeometry StartPoint="7,17" EndPoint="13,17"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Company">
+        <RectangleGeometry Rect="5,3,14,18"/>
+        <RectangleGeometry Rect="8,6,3,3"/>
+        <RectangleGeometry Rect="13,6,3,3"/>
+        <RectangleGeometry Rect="8,11,3,3"/>
+        <RectangleGeometry Rect="13,11,3,3"/>
+        <RectangleGeometry Rect="9,17,6,4"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Building">
+        <RectangleGeometry Rect="3,10,7,11"/>
+        <RectangleGeometry Rect="12,4,9,17"/>
+        <LineGeometry StartPoint="5,13" EndPoint="8,13"/>
+        <LineGeometry StartPoint="5,17" EndPoint="8,17"/>
+        <LineGeometry StartPoint="15,8" EndPoint="18,8"/>
+        <LineGeometry StartPoint="15,12" EndPoint="18,12"/>
+        <LineGeometry StartPoint="15,16" EndPoint="18,16"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Person">
+        <EllipseGeometry Center="12,8" RadiusX="3.4" RadiusY="3.4"/>
+        <PathGeometry Figures="M6,21 L6,18 L9,14 L15,14 L18,18 L18,21 Z"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.MapPin">
+        <EllipseGeometry Center="12,10" RadiusX="4" RadiusY="4"/>
+        <PathGeometry Figures="M8,13 L12,21 L16,13 Z"/>
+        <EllipseGeometry Center="12,10" RadiusX="1.4" RadiusY="1.4"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Phone">
+        <RectangleGeometry Rect="8,2,8,20" RadiusX="1.6" RadiusY="1.6"/>
+        <LineGeometry StartPoint="11,19" EndPoint="13,19"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Mail">
+        <RectangleGeometry Rect="3,5,18,14" RadiusX="1.5" RadiusY="1.5"/>
+        <PathGeometry Figures="M4,6 L12,13 L20,6"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Calendar">
+        <RectangleGeometry Rect="3,5,18,16" RadiusX="1.5" RadiusY="1.5"/>
+        <LineGeometry StartPoint="3,10" EndPoint="21,10"/>
+        <LineGeometry StartPoint="7,2" EndPoint="7,6"/>
+        <LineGeometry StartPoint="17,2" EndPoint="17,6"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Hash">
+        <LineGeometry StartPoint="9,3" EndPoint="7,21"/>
+        <LineGeometry StartPoint="17,3" EndPoint="15,21"/>
+        <LineGeometry StartPoint="4,9" EndPoint="20,9"/>
+        <LineGeometry StartPoint="3,15" EndPoint="19,15"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Money">
+        <EllipseGeometry Center="12,12" RadiusX="9" RadiusY="9"/>
+        <LineGeometry StartPoint="12,6" EndPoint="12,18"/>
+        <PathGeometry Figures="M15,9 L10,9 L10,12 L14,12 L14,15 L9,15"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Landmark">
+        <PathGeometry Figures="M4,9 L12,3 L20,9 Z"/>
+        <LineGeometry StartPoint="4,9" EndPoint="20,9"/>
+        <LineGeometry StartPoint="6,9" EndPoint="6,18"/>
+        <LineGeometry StartPoint="10,9" EndPoint="10,18"/>
+        <LineGeometry StartPoint="14,9" EndPoint="14,18"/>
+        <LineGeometry StartPoint="18,9" EndPoint="18,18"/>
+        <LineGeometry StartPoint="4,21" EndPoint="20,21"/>
+        <LineGeometry StartPoint="4,18" EndPoint="20,18"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Globe">
+        <EllipseGeometry Center="12,12" RadiusX="9" RadiusY="9"/>
+        <EllipseGeometry Center="12,12" RadiusX="4" RadiusY="9"/>
+        <LineGeometry StartPoint="3,12" EndPoint="21,12"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Briefcase">
+        <RectangleGeometry Rect="3,8,18,12" RadiusX="1.5" RadiusY="1.5"/>
+        <PathGeometry Figures="M9,8 L9,5 L15,5 L15,8"/>
+        <LineGeometry StartPoint="3,14" EndPoint="21,14"/>
+    </GeometryGroup>
+
+    <GeometryGroup x:Key="Icon.Tag">
+        <PathGeometry Figures="M3,12 L11,4 L20,4 L20,13 L12,21 Z"/>
+        <EllipseGeometry Center="15,8" RadiusX="1.6" RadiusY="1.6"/>
+    </GeometryGroup>
+
+    <!-- Ícone do item "+ Informações" na tela de detalhes compacta -->
+    <GeometryGroup x:Key="Icon.MoreInfo">
+        <EllipseGeometry Center="12,12" RadiusX="9" RadiusY="9"/>
+        <LineGeometry StartPoint="12,11" EndPoint="12,16"/>
+        <EllipseGeometry Center="12,8" RadiusX="0.9" RadiusY="0.9"/>
+    </GeometryGroup>
+
+    <PathGeometry x:Key="Icon.ChevronRight" Figures="M9,4 L17,12 L9,20"/>
+
+    <!-- Estilo compartilhado dos ícones de campo da tela "+ Informações" -->
+    <Style x:Key="InfoFieldIconStyle" TargetType="Path">
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Stretch" Value="Uniform"/>
+        <Setter Property="Fill" Value="Transparent"/>
+        <Setter Property="Stroke" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="StrokeThickness" Value="1.6"/>
+        <Setter Property="StrokeLineJoin" Value="Round"/>
+        <Setter Property="StrokeStartLineCap" Value="Round"/>
+        <Setter Property="StrokeEndLineCap" Value="Round"/>
+    </Style>
+
+</ResourceDictionary>

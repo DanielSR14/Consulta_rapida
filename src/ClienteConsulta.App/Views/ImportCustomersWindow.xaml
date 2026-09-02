@@ -1,0 +1,86 @@
+<Window x:Class="ClienteConsulta.App.Views.ImportCustomersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Importar clientes" SizeToContent="Height" Width="480"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True">
+
+    <Window.Resources>
+        <Style x:Key="GuideStepStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource BodyFont}"/>
+            <Setter Property="FontSize" Value="12.5"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+            <Setter Property="Margin" Value="0,3,0,0"/>
+        </Style>
+    </Window.Resources>
+
+    <Border Margin="20" CornerRadius="14" Background="{StaticResource SurfaceBrush}"
+            BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" Effect="{StaticResource WindowShadow}">
+        <Grid Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Importar clientes" FontFamily="{StaticResource DisplayFont}" FontSize="17"
+                       FontWeight="SemiBold" Foreground="{StaticResource TextPrimaryBrush}"/>
+
+            <TextBlock Grid.Row="1" FontFamily="{StaticResource BodyFont}" FontSize="12" TextWrapping="Wrap"
+                       Foreground="{StaticResource TextSecondaryBrush}" Margin="0,6,0,0"
+                       Text="Atualiza a base de clientes a partir do relatório de empresas do sistema Domínio. Isso substitui toda a base atual — inclusive empresas cadastradas manualmente."/>
+
+            <Border Grid.Row="2" Background="{StaticResource SurfaceAltBrush}" CornerRadius="8" Padding="14,12" Margin="0,14,0,0">
+                <StackPanel>
+                    <TextBlock Text="Como exportar da Domínio" FontFamily="{StaticResource BodyFont}" FontSize="12.5"
+                               FontWeight="SemiBold" Foreground="{StaticResource TextPrimaryBrush}"/>
+                    <TextBlock Style="{StaticResource GuideStepStyle}" Margin="0,8,0,0">
+                        <Run Text="1." FontWeight="SemiBold"/>
+                        <Run Text=" Relatórios → Cadastrais → Empresas"/>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource GuideStepStyle}">
+                        <Run Text="2." FontWeight="SemiBold"/>
+                        <Run Text=" Modelo &quot;Completo&quot;"/>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource GuideStepStyle}">
+                        <Run Text="3." FontWeight="SemiBold"/>
+                        <Run Text=" Exportar para excel"/>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+            <Grid Grid.Row="3" Margin="0,16,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="FilePathText" Grid.Column="0" FontFamily="{StaticResource BodyFont}" FontSize="12"
+                           Foreground="{StaticResource TextMutedBrush}" VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis" Text="Nenhum arquivo selecionado"/>
+                <Button Grid.Column="1" Content="Selecionar arquivo..." Style="{StaticResource SecondaryButtonStyle}"
+                        Margin="10,0,0,0" Click="SelectFileButton_OnClick"/>
+            </Grid>
+
+            <TextBlock x:Name="StatusText" Grid.Row="4" FontFamily="{StaticResource BodyFont}" FontSize="12"
+                       Foreground="{DynamicResource PrimaryBrush}" TextWrapping="Wrap" Margin="0,14,0,0"/>
+
+            <TextBlock x:Name="SummaryText" Grid.Row="5" FontFamily="{StaticResource BodyFont}" FontSize="11.5"
+                       Foreground="{StaticResource TextMutedBrush}" TextWrapping="Wrap" Margin="0,6,0,0"/>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,18,0,0">
+                <Button Content="Cancelar" Style="{StaticResource SecondaryButtonStyle}" Click="CancelButton_OnClick" Margin="0,0,10,0"/>
+                <Button x:Name="ImportButton" Content="Importar" Style="{StaticResource PrimaryButtonStyle}"
+                        IsEnabled="False" Click="ImportButton_OnClick"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

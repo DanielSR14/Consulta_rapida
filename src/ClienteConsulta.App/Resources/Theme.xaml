@@ -1,0 +1,57 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Paleta.
+         Os brushes PrimaryBrush / PrimaryDarkBrush / PrimaryLightBrush / PrimarySoftBrush /
+         SelectedBrush / TextOnPrimaryBrush são SUBSTITUÍDOS em runtime a partir da cor principal
+         escolhida em Configurações (ver Infrastructure/Branding/ThemeManager.cs). Por isso todo
+         uso deles na UI é {DynamicResource ...}, nunca {StaticResource} — o WPF congela os
+         brushes de um ResourceDictionary compilado, então StaticResource não pegaria a troca.
+         Os valores abaixo são só o padrão embutido (azul) e o que o Designer enxerga. -->
+    <Color x:Key="PrimaryColor">#2563EB</Color>
+    <Color x:Key="PrimaryDarkColor">#1D4FD8</Color>
+    <Color x:Key="PrimaryLightColor">#5B8DEF</Color>
+    <Color x:Key="PrimarySoftColor">#E6EEFD</Color>
+
+    <Color x:Key="SurfaceColor">#FFFFFF</Color>
+    <Color x:Key="SurfaceAltColor">#F7F8FA</Color>
+    <Color x:Key="BorderColor">#E4E7EC</Color>
+    <Color x:Key="DividerColor">#EEF0F3</Color>
+
+    <Color x:Key="TextPrimaryColor">#1A1D21</Color>
+    <Color x:Key="TextSecondaryColor">#6B7280</Color>
+    <Color x:Key="TextMutedColor">#9AA1AC</Color>
+    <Color x:Key="TextOnPrimaryColor">#FFFFFF</Color>
+
+    <Color x:Key="HoverColor">#F2F4F7</Color>
+    <Color x:Key="SelectedColor">#E6EEFD</Color>
+    <Color x:Key="SuccessColor">#1E7F4B</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="PrimaryDarkBrush" Color="{StaticResource PrimaryDarkColor}"/>
+    <SolidColorBrush x:Key="PrimaryLightBrush" Color="{StaticResource PrimaryLightColor}"/>
+    <SolidColorBrush x:Key="PrimarySoftBrush" Color="{StaticResource PrimarySoftColor}"/>
+
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}"/>
+    <SolidColorBrush x:Key="SurfaceAltBrush" Color="{StaticResource SurfaceAltColor}"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
+    <SolidColorBrush x:Key="DividerBrush" Color="{StaticResource DividerColor}"/>
+
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}"/>
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}"/>
+    <SolidColorBrush x:Key="TextOnPrimaryBrush" Color="{StaticResource TextOnPrimaryColor}"/>
+
+    <SolidColorBrush x:Key="HoverBrush" Color="{StaticResource HoverColor}"/>
+    <SolidColorBrush x:Key="SelectedBrush" Color="{StaticResource SelectedColor}"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+
+    <!-- Tipografia -->
+    <FontFamily x:Key="DisplayFont">Segoe UI Variable Display, Segoe UI Semibold, Segoe UI</FontFamily>
+    <FontFamily x:Key="BodyFont">Segoe UI Variable Text, Segoe UI</FontFamily>
+
+    <!-- Sombra padrão da janela flutuante -->
+    <DropShadowEffect x:Key="WindowShadow" Color="#000000" Direction="270" ShadowDepth="6" BlurRadius="28" Opacity="0.24"/>
+
+</ResourceDictionary>

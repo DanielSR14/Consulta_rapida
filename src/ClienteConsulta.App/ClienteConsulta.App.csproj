@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <AssemblyName>ClienteConsulta</AssemblyName>
+    <RootNamespace>ClienteConsulta.App</RootNamespace>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <Version>1.0.0</Version>
+    <Product>Consulta Rápida</Product>
+    <Company>Consulta Rápida</Company>
+    <Description>Consulta rápida de dados cadastrais de clientes a partir do relatório do sistema Domínio.</Description>
+    <Copyright>© 2026</Copyright>
+    <AssemblyTitle>Consulta Rápida</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- UseWPF + UseWindowsForms tornam "System.Windows.Forms" implícito, colidindo com
+         tipos de mesmo nome em System.Windows (Application, KeyEventArgs, etc). O NotifyIcon
+         da bandeja é o único lugar que precisa de WinForms, e já importa o namespace explicitamente. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClienteConsulta.Core\ClienteConsulta.Core.csproj" />
+    <ProjectReference Include="..\ClienteConsulta.Data.Excel\ClienteConsulta.Data.Excel.csproj" />
+    <ProjectReference Include="..\ClienteConsulta.Data.Sqlite\ClienteConsulta.Data.Sqlite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\icon.png" />
+  </ItemGroup>
+
+</Project>

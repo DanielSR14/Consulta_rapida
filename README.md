@@ -77,7 +77,15 @@ compila `installer\ConsultaRapida.iss` com o Inno Setup
 
 Checklist de nova versão: bumpar `<Version>` em
 `src\ClienteConsulta.App\ClienteConsulta.App.csproj` **e** `MyAppVersion` em
-`installer\ConsultaRapida.iss` (têm que bater), depois rodar o script.
+`installer\ConsultaRapida.iss` (têm que bater), rodar o script, e publicar o
+instalador como release:
+
+```
+gh release create vX.Y.Z dist\ConsultaRapida-Setup-X.Y.Z.exe --title "Consulta Rápida X.Y.Z" --notes "..."
+```
+
+O botão "Baixar" do site aponta para `releases/latest`, então cada release nova
+vira automaticamente o download atual.
 
 O `.exe` e o instalador **não são assinados digitalmente** — na primeira
 execução o Windows mostra o aviso do SmartScreen ("Mais informações" →

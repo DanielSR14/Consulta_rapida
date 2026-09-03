@@ -1,5 +1,7 @@
 # Consulta Rápida
 
+![Consulta Rápida — janela de busca flutuante](assets/preview.svg)
+
 **[⬇ Baixar para Windows](https://github.com/DanielSR14/Consulta_rapida/releases/latest)**
  · **[Site](https://danielsr14.github.io/Consulta_rapida/)**
 
